@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/28 01:10:31 by zajaddou          #+#    #+#             */
+/*   Updated: 2024/10/28 01:24:32 by zajaddou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
+#include <ctype.h>
 
 int	ft_toupper(int c)
 {
@@ -9,8 +22,8 @@ int	ft_toupper(int c)
 
 int	main(void)
 {
-	char	r;
-	r =	ft_toupper('a');
-	printf("%c", r);
+	char c = 'a';
+	printf("%c\n",ft_toupper(c));
+	printf("%c\n",toupper(c));
 	return (0);
 }

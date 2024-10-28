@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 01:10:29 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/28 01:23:31 by zajaddou         ###   ########.fr       */
+/*   Created: 2024/10/28 01:10:10 by zajaddou          #+#    #+#             */
+/*   Updated: 2024/10/28 01:10:11 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+#include <unistd.h>
 
-int	ft_tolower(int c)
+int	ft_isdigit(int c)
 {
-	if ((unsigned char)c >= 'A' && (unsigned char)c <= 'Z')
-		return (c + 32);
-	return (c);
+	if ((unsigned char)c >= '0' && (unsigned char)c <= '9')
+		return (1);
+	return (0);
 }
 
 int	main(void)
 {
-	char c = 'c';
-	printf("%c\n", ft_tolower(c));
-	printf("%c", tolower(c));
+	if (ft_isdigit('1'))
+		write(1, "y", 1);
 	return (0);
 }

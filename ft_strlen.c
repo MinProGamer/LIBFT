@@ -1,12 +1,11 @@
-#include <unistd.h>
 #include <stdio.h>
 #include <string.h>
 
-size_t ft_strlen(const char* str){
-	int i;
+size_t ft_strlen(const char *s){
+	size_t i;
 	i = 0;
 
-	while(str[i] != '\0')
+	while(s[i] != '\0')
 	{
 		i++;
 	}
@@ -15,7 +14,8 @@ size_t ft_strlen(const char* str){
 
 int main(void)
 {
-	printf("%d",ft_strlen(NULL));
-	printf("%d",strlen(NULL));
+	char str[] = "1337";
+	printf("%lu\n",ft_strlen(str));
+	printf("%lu",strlen(str));
 	return 1;
 }
