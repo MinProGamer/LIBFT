@@ -6,7 +6,7 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 01:10:31 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/28 01:24:32 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/10/28 02:33:32 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	ft_toupper(int c)
 {
-	if ((unsigned char)c >= 'a' && (unsigned char)c <= 'z')
+	if (c >= 'a' && c <= 'z')
 		return (c - 32);
 	return (c);
 }

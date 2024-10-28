@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 01:10:03 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/28 02:27:34 by zajaddou         ###   ########.fr       */
+/*   Created: 2024/10/28 01:09:46 by zajaddou          #+#    #+#             */
+/*   Updated: 2024/10/28 06:15:22 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stddef.h>
+#include <string.h>
+#include <stdio.h>
 
-int	ft_isalnum(	int c)	{
-	if((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9'))
-		return (1);
-	return (0);
+char *ft_strrchr(const char *s, int c)
+{
+    const char *last = NULL;
+
+    while (*s != '\0') {
+        if (*s == c)
+            last = s;
+        s++;
+    }
+
+    return (char *)last;
 }
 
-int	main(void)
+int main(int argc, char const *argv[])
 {
-	if (ft_isalnum('A'))
-		write(1, "Y", 1);
-	else
-		write(1, "N", 1);
-	return (0);
+  char str[] = "@test @minpro";
+
+  printf("%s\n",ft_strrchr(str,'@'));
+  printf("%s",strrchr(str,'@'));
+  return 0;
 }

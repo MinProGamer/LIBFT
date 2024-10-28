@@ -6,7 +6,7 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 01:10:20 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/28 01:20:28 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/10/28 02:26:43 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	ft_isprint(int c)
 {
-	return ((unsigned char)c >= 32 && (unsigned char)c <= 126);
+	return (c >= 32 && c <= 126);
 }
 
 int	main(void)

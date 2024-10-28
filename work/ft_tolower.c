@@ -6,7 +6,7 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 01:10:29 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/28 01:23:31 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/10/28 02:42:13 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 int	ft_tolower(int c)
 {
-	if ((unsigned char)c >= 'A' && (unsigned char)c <= 'Z')
+	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
 	return (c);
 }
 
 int	main(void)
 {
-	char c = 'c';
+	char c = 'A';
 	printf("%c\n", ft_tolower(c));
 	printf("%c", tolower(c));
 	return (0);
