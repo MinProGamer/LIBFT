@@ -6,7 +6,7 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 03:51:16 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/28 03:59:13 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/10/28 17:55:42 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,9 @@ size_t ft_strlcpy(char * dst, const char * src, size_t dstsize) {
 int main(void)
 {
 	char src[]= "1337";
-
 	char des[50];
-
 	ft_strlcpy(des,src,5);
-
 	printf("src : %s \n",src);
 	printf("des : %s \n",des);
-	
 	return (0);
 }
