@@ -6,7 +6,16 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 21:57:44 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/30 21:57:45 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/10/31 00:46:43 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void *calloc(size_t count, size_t size){
+  
+}
+
+int main(void)
+{
+  
+  return 0;
+}
