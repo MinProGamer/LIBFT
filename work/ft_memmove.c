@@ -6,7 +6,7 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 03:56:08 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/30 18:00:55 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/10/30 23:36:24 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 int	main(int argc, char const *argv[])
 {
-	char	src[];
-	char	dst[];
-
-	src = "minprox";
-	dst = "minproc";
-	printf("c:%s\n",ft_memmove(dst,src,strlen(src)+1));
-	printf("o:%s",memmove(dst,src,strlen(src)+1));
+	char	src[] = "minprox";
+	char	dst[] = "minproc";
+	printf("c : %s\n",ft_memmove(dst,src,strlen(src)+1));
+	printf("o : %s",memmove(dst,src,strlen(src)+1));
 	return (0);
 }

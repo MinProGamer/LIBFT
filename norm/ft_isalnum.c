@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 01:10:06 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/30 18:12:13 by zajaddou         ###   ########.fr       */
+/*   Created: 2024/10/28 01:10:03 by zajaddou          #+#    #+#             */
+/*   Updated: 2024/10/30 23:40:27 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_isalpha(int c)
+int	ft_isalnum(	int c)
 {
-	if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z' )
+	if ((c >= 'A' && c <= 'Z')
+		|| (c >= 'a' && c <= 'z')
+		|| (c >= '0' && c <= '9'))
 		return (1);
 	return (0);
 }
 
 int	main(void)
 {
-	if (ft_isalpha('a'))
-		write(1, "y", 1);
-	return (1);
+	if (ft_isalnum('A'))
+		write(1, "Y", 1);
+	else
+		write(1, "N", 1);
+	return (0);
 }

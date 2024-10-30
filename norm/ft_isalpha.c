@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 01:10:10 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/28 02:25:51 by zajaddou         ###   ########.fr       */
+/*   Created: 2024/10/28 01:10:06 by zajaddou          #+#    #+#             */
+/*   Updated: 2024/10/30 23:38:22 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_isdigit(int c)
+int	ft_isalpha(int c)
 {
-	if (c >= '0' && c <= '9')
+	if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z' )
 		return (1);
 	return (0);
 }
 
 int	main(void)
 {
-	if (ft_isdigit('1'))
+	if (ft_isalpha('a'))
 		write(1, "y", 1);
-	return (0);
+	return (1);
 }
