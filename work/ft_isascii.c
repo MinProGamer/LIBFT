@@ -6,7 +6,7 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 04:31:22 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/30 04:35:25 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/10/30 18:12:25 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int ft_isascii(int c) {
 int main() {
     printf("A : %d\n", ft_isascii('A'));
     printf("128 : %d\n", ft_isascii(128));
-    return 0;
+    return (0);
 }

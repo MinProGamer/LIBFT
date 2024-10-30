@@ -6,7 +6,7 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 01:10:06 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/28 02:25:45 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/10/30 18:12:13 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	ft_isalpha(int c)
 	return (0);
 }
 
-int		main(void){
+int	main(void)
+{
 	if (ft_isalpha('a'))
 		write(1, "y", 1);
 	return (1);
