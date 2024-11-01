@@ -6,7 +6,7 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:42:22 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/01 22:05:24 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/02 00:06:59 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ char	*ft_strdup(const char *s)
 		return (NULL);
 	while (*s)
 		*copy++ = *s++;
-	*copy = '\0';
+	*copy++ = '\0';
 	return (copy);
 }

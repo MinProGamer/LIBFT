@@ -6,7 +6,7 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 01:09:46 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/01 22:05:46 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/01 23:41:41 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,14 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	const char	*last = NULL;
+	char		char_c;
 
+	char_c = (char)c;
+	if (char_c == '\0')
+		return ((char *)s + ft_strlen(s));
 	while (*s != '\0')
 	{
-		if (*s == c)
+		if (*s == char_c)
 			last = s;
 		s++;
 	}
