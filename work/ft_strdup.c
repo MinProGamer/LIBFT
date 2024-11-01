@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 16:32:05 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/28 17:54:13 by zajaddou         ###   ########.fr       */
+/*   Created: 2024/10/31 22:42:22 by zajaddou          #+#    #+#             */
+/*   Updated: 2024/10/31 23:10:51 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-size_t ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	size_t i;
-	i = 0;
+	size_t	i;
 
-	while(s[i] != '\0')
+	i = 0;
+	while (s[i] != '\0')
 	{
 		i++;
 	}
-	return i;
+	return (i);
 }
 
-int main(void)
+char	*ft_strdup(const char *s)
 {
-	char str[] = "1337";
-	printf("%lu\n",ft_strlen(str));
-	printf("%lu",strlen(str));
-	return 1;
+	size_t	len;
+	char	*copy;
+
+	len = ft_strlen(s);
+	copy = malloc(len + 1);
+	if (copy == NULL)
+		return (NULL);
+	while (*s)
+		*copy++ = *s++;
+	*copy = '\0';
+	return (copy);
 }

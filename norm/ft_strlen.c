@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 01:10:31 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/28 02:33:32 by zajaddou         ###   ########.fr       */
+/*   Created: 2024/10/28 16:32:05 by zajaddou          #+#    #+#             */
+/*   Updated: 2024/10/31 22:45:51 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <ctype.h>
 
-int	ft_toupper(int c)
+size_t	ft_strlen(const char *s)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
-}
+	size_t	i;
 
-int	main(void)
-{
-	char c = 'a';
-	printf("%c\n",ft_toupper(c));
-	printf("%c\n",toupper(c));
-	return (0);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

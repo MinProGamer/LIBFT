@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/30 05:22:54 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/30 21:43:21 by zajaddou         ###   ########.fr       */
+/*   Created: 2024/10/30 21:57:44 by zajaddou          #+#    #+#             */
+/*   Updated: 2024/10/31 22:46:25 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -21,18 +22,38 @@ void	ft_bzero(void *s, size_t n)
 		*ptr++ = 0;
 }
 
+void	*ft_calloc(size_t count, size_t size)
+{
+	size_t	l;
+	void	*p;
+
+	l = count * size;
+	p = malloc(l);
+	if (p == NULL)
+		return (NULL);
+	ft_bzero(p, l);
+	return (p);
+}
+
 int	main(void)
 {
-	char	buffer[9] = {'1','2','3', '4', '5', '6', '7', '8', '9'};
-	printf("before : ");
-	for	(int i = 0; i < 9; i++){
-		printf("%c ", buffer[i]);
+	size_t	count;
+	size_t	size;
+	int		*arr;
+	size_t	i;
+
+	count = 5;
+	size = sizeof(int);
+	arr = (int *)ft_calloc(count, size);
+	if (arr == NULL)
+		fprintf(stderr, "Memory allocation failed\n");
+	i = 0;
+	while (i < count)
+	{
+		printf("%d ", arr[i]);
+		i++;
 	}
 	printf("\n");
-	ft_bzero(buffer, 2);
-	printf("after : ");
-	for (int i = 0; i < 9; i++) {
-		printf("%c ", buffer[i]);
-	}
+	free(arr);
 	return (0);
 }

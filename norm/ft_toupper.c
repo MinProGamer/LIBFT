@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/30 21:57:44 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/31 00:46:43 by zajaddou         ###   ########.fr       */
+/*   Created: 2024/10/28 01:10:31 by zajaddou          #+#    #+#             */
+/*   Updated: 2024/10/31 22:45:37 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *calloc(size_t count, size_t size){
-  
-}
-
-int main(void)
+int	ft_toupper(int c)
 {
-  
-  return 0;
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }
