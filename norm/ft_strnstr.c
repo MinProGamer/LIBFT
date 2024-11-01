@@ -6,21 +6,11 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 19:38:37 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/01 19:50:12 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/01 22:05:41 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	while ((*s1 == *s2) && *s1 && --n)
-	{
-		s1++;
-		s2++;
-	}
-	return (*s1 - *s2);
-}
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -43,15 +33,4 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		i++;
 	}
 	return (NULL);
-}
-
-int	main(void)
-{
-	const char	*haystack = "ABCD";
-	const char	*needle = "C";
-	char		*result;
-
-	result = ft_strnstr(haystack, needle, 4);
-	printf("%s", result);
-	return (0);
 }

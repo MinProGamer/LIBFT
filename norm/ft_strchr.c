@@ -6,13 +6,11 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 01:09:46 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/30 23:55:35 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/01 22:05:17 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -23,17 +21,4 @@ char	*ft_strchr(const char *s, int c)
 		s++;
 	}
 	return (NULL);
-}
-
-int	main(void)
-{
-	char	*p;
-	char	*d;
-	char str[] = " test @minpro";
-
-	p = ft_strchr(str,'@');
-	d = strchr(str,'@');
-	printf("%c\n",p[0]);
-	printf("%c",d[0]);
-	return (0);
 }

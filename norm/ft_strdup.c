@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 01:09:46 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/28 06:15:22 by zajaddou         ###   ########.fr       */
+/*   Created: 2024/10/31 22:42:22 by zajaddou          #+#    #+#             */
+/*   Updated: 2024/11/01 22:05:24 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strdup(const char *s)
 {
-    const char *last = NULL;
+	size_t	len;
+	char	*copy;
 
-    while (*s != '\0') {
-        if (*s == c)
-            last = s;
-        s++;
-    }
-
-    return (char *)last;
-}
-
-int main(int argc, char const *argv[])
-{
-  char str[] = "@test @minpro";
-
-  printf("%s\n",ft_strrchr(str,'@'));
-  printf("%s",strrchr(str,'@'));
-  return 0;
+	len = ft_strlen(s);
+	copy = malloc(len + 1);
+	if (copy == NULL)
+		return (NULL);
+	while (*s)
+		*copy++ = *s++;
+	*copy = '\0';
+	return (copy);
 }

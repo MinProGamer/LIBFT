@@ -6,11 +6,11 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 01:10:03 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/30 23:40:27 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/01 22:04:21 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 int	ft_isalnum(	int c)
 {
@@ -18,14 +18,5 @@ int	ft_isalnum(	int c)
 		|| (c >= 'a' && c <= 'z')
 		|| (c >= '0' && c <= '9'))
 		return (1);
-	return (0);
-}
-
-int	main(void)
-{
-	if (ft_isalnum('A'))
-		write(1, "Y", 1);
-	else
-		write(1, "N", 1);
 	return (0);
 }

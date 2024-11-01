@@ -6,12 +6,11 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 20:57:15 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/30 23:47:42 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/01 22:15:38 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 static void	set(long *result, int *sign)
 {
@@ -45,17 +44,3 @@ int	ft_atoi(const char *str)
 	}
 	return (sign * result);
 }
-
-/*
-int	main(void)
-{
-	int	i;
-	char *s;
-
-	s = "\n-214748364921474839948";
-	i = ft_atoi(s);
-	printf("mine   : %d\n", i);
-	i = atoi(s);
-	printf("origin : %d\n", i);
-}
-*/

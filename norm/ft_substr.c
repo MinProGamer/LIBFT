@@ -10,40 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-
-void	ft_bzero(void *s, size_t n)
-{
-	unsigned char	*ptr;
-
-	ptr = (unsigned char *)s;
-	while (n--)
-		*ptr++ = 0;
-}
-
-void	*ft_calloc(size_t count, size_t size)
-{
-	size_t	l;
-	void	*p;
-
-	l = count * size;
-	p = malloc(l);
-	if (p == NULL)
-		return (NULL);
-	ft_bzero(p, l);
-	return (p);
-}
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -60,19 +27,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		sub[i++] = s[start++];
 	sub[i] = '\0';
 	return (sub);
-}
-
-int	main(void)
-{
-	int		len;
-	int		start;
-	char	*s;
-	char	*str;
-
-	len = 6;
-	start = 3;
-	s = "MinPro";
-	str = ft_substr(s, start, len);
-	printf("%s", str);
-	return (0);
 }
