@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 04:47:57 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/01 05:56:43 by zajaddou         ###   ########.fr       */
+/*   Created: 2024/11/01 19:46:23 by zajaddou          #+#    #+#             */
+/*   Updated: 2024/11/01 19:46:23 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-
+#include <stdlib.h>
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -41,21 +41,38 @@ size_t	ft_strlen(const char *s)
 
 	i = 0;
 	while (s[i] != '\0')
-	{
 		i++;
-	}
 	return (i);
 }
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t ln = ft_strlen(s);
-	ft_calloc(ln,sizeof(char));
+	size_t	ln;
+	size_t	i;
+	char	*sub;
+
+	ln = ft_strlen(s);
+	i = 0;
+	sub = (char *)ft_calloc(len - start + 1, sizeof(char));
+	if (sub == NULL)
+		return (NULL);
+	while (start < len)
+		sub[i++] = s[start++];
+	sub[i] = '\0';
+	return (sub);
 }
 
-int main()
+int	main(void)
 {
-	short x = 'A';
-	printf("%d",sizeof(short));
-	char *str = "MinPro";
-	return 0;
+	int		len;
+	int		start;
+	char	*s;
+	char	*str;
+
+	len = 6;
+	start = 3;
+	s = "MinPro";
+	str = ft_substr(s, start, len);
+	printf("%s", str);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:42:22 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/31 23:10:51 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/01 19:51:00 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ size_t	ft_strlen(const char *s)
 
 	i = 0;
 	while (s[i] != '\0')
-	{
 		i++;
-	}
 	return (i);
 }
 

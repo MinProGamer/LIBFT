@@ -1,23 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 16:32:05 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/01 19:02:05 by zajaddou         ###   ########.fr       */
+/*   Created: 2024/10/30 05:22:54 by zajaddou          #+#    #+#             */
+/*   Updated: 2024/11/01 20:09:32 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-size_t	ft_strlen(const char *s)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	const unsigned char	*ptr;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	ptr = (const unsigned char *)s;
+	while (n--)
+	{
+		if (*ptr == (unsigned char)c)
+			return ((void *)ptr);
+		ptr++;
+	}
+	return (NULL);
+}
+
+int	main(void)
+{
+	const char	str[] = "MinPro";
+	char		ch;
+	size_t		n;
+
+	ch = 'P';
+	n = sizeof(str);
+	printf("%s", (char *)ft_memchr(str, ch, n));
+	return (0);
 }

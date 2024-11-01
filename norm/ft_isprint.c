@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/30 05:22:54 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/10/30 18:14:30 by zajaddou         ###   ########.fr       */
+/*   Created: 2024/10/28 01:10:20 by zajaddou          #+#    #+#             */
+/*   Updated: 2024/11/01 19:52:09 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include <stdio.h>
-#include <stddef.h>
+#include <ctype.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_isprint(int c)
 {
-	const unsigned char	*ptr = (const unsigned char *)s;
-
-	while (n--)
-	{
-		if (*ptr == (unsigned char)c)
-			return ((void *)ptr);
-		ptr++;
-	}
-	return (NULL);
+	return (c >= 32 && c <= 126);
 }
 
 int	main(void)
 {
-	const char str[] = "MinPro";
-	char ch = 'P';
-	size_t n = sizeof(str);
-	printf("%s",ft_memchr(str, ch, n));
-	return 0;
+	int	c;
+
+	c = 'A';
+	if (ft_isprint(c))
+		write(1, "Y", 1);
+	else
+		write(1, "N", 1);
+	write(1, "\n", 1);
+	if (isprint(c))
+		write(1, "Y", 1);
+	else
+		write(1, "N", 1);
+	return (0);
 }
