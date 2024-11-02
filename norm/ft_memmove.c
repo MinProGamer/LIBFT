@@ -6,7 +6,7 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 03:56:08 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/01 22:05:04 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/02 23:26:11 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	if (d > s)
 	{
 		while (len--)
-		{
 			d[len] = s[len];
-		}
 	}
 	else
 	{
