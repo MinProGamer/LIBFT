@@ -6,7 +6,7 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 23:31:49 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/02 23:43:20 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/03 03:28:23 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	result = (char *)malloc(len1 + len2 + 1);
 	if (!result)
 		return (NULL);
-	ft_strcpy(result, s1);
-	ft_strcat(result, s2);
+	ft_strlcpy(result, s1, len1 + 1);
+	ft_strlcat(result, s2, len1 + len2 + 1);
 	return (result);
 }
