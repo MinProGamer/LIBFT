@@ -6,7 +6,7 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 03:56:08 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/03 06:30:20 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/03 09:19:27 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	const unsigned char	*s;
-	unsigned char		*d;
+	unsigned char	*s;
+	unsigned char	*d;
 
-	s = (const unsigned char *)src;
+	s = (unsigned char *)src;
 	d = (unsigned char *)dst;
 	if (dst == src || len == 0)
 		return (dst);
