@@ -6,7 +6,7 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 01:15:40 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/03 02:54:09 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/09 17:55:21 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	result_len;
 	char	*result;
 
+	if (!s1 || !set)
+			return (NULL);
 	start = 0;
 	while (s1[start] && is_in_set(s1[start], set))
 		start++;
