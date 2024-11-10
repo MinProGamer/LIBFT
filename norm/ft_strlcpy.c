@@ -6,13 +6,12 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 03:51:16 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/08 15:32:45 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/10 13:22:12 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
+
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
@@ -32,12 +31,4 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		dst[i] = '\0';
 	}
 	return (src_len);
-}
-int main()
-{
-	char src[] = "hellow";
-	char dest[] = "world";
-	printf("%lu\n",ft_strlcpy("NULL",NULL,6));
-	printf("%s",dest);
-	return 0;
 }

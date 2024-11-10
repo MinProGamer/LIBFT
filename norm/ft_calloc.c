@@ -6,7 +6,7 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 21:57:44 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/08 17:05:22 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/10 13:23:34 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,4 @@ void	*ft_calloc(size_t count, size_t size)
 		return (NULL);
 	ft_bzero(p, l);
 	return (p);
-}
-int main()
-{
-	if (ft_calloc(-1,-1) != NULL)
-		printf("good\n");
-		else 
-			printf("error");
-	if (calloc(-1,-1) != NULL)
-		printf("good\n");
-		else 
-			printf("error");
 }

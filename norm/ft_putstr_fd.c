@@ -6,7 +6,7 @@
 /*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 06:42:59 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/09 23:50:31 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/10 13:22:33 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	size_t i;
-	
-	if(!s)
+	size_t	i;
+
+	if (!s)
 		return ;
 	i = 0;
 	while (s[i])
