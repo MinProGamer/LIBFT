@@ -6,49 +6,40 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 01:15:40 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/12 00:29:08 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/12 01:06:23 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_in_set(char c, const char *set)
+static int	ft_strcchr(const char *s, const char c)
 {
-	while (*set)
+	int	i;
+
+	i = 0;
+	while (s[i])
 	{
-		if (c == *set)
+		if (s[i] == c)
 			return (1);
-		set++;
+		i++;
 	}
 	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	start;
-	size_t	end;
-	size_t	result_len;
-	char	*result;
+	int	start;
+	int	end;
 
 	if (!s1)
 		return (NULL);
-	if (!set)
-		return ((char *) s1);
 	start = 0;
-	while (s1[start] && is_in_set(s1[start], set))
+	end = ft_strlen(s1) - 1;
+	while (s1[start] && ft_strcchr(set, s1[start]))
 		start++;
-	end = start;
-	while (s1[end])
-		end++;
-	if (end == start)
-		return ((char *)calloc(1, 1));
-	end--;
-	while (end > start && is_in_set(s1[end], set))
+	while (s1[end] && ft_strcchr(set, s1[end]))
 		end--;
-	result_len = end - start + 1;
-	result = (char *)malloc(result_len + 1);
-	if (!result)
-		return (NULL);
-	ft_strlcpy (result, s1 + start, result_len + 1);
-	return (result);
+	if (end == -1)
+		return (ft_substr(s1, start, 0));
+	return (ft_substr(s1, start, end - start + 1));
 }
