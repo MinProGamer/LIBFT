@@ -1,4 +1,14 @@
-# Makefile for the libft project
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/11/13 05:03:47 by zajaddou          #+#    #+#              #
+#    Updated: 2024/11/13 05:03:58 by zajaddou         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 NAME = libft.a
 CC = cc
@@ -6,7 +16,6 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = rcs
 
-# List all source files here
 SRCS = ft_isalpha.c \
        ft_isdigit.c \
        ft_isalnum.c \
