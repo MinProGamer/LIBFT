@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 08:00:54 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/12 23:23:13 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/13 04:17:50 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	size_t	i;
-
+	if (!s)
+		return ;
 	if (fd < 0)
 		return ;
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 05:44:26 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/12 23:29:18 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/13 04:17:06 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (fd < 0)
+	if (fd < 0){
+		write(2,"error", 5);
 		return ;
+	}
 	write(fd, &c, 1);
 }

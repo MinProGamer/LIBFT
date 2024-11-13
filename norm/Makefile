@@ -41,10 +41,9 @@ SRCS = ft_isalpha.c \
        ft_itoa.c \
        ft_striteri.c
 
-OBJS = $(SRCS:.c=.o) # file .c redo .o main.c = main.o; 
+OBJS = $(SRCS:.c=.o)
 
-all: $(NAME) #target : depa
-              #      commind 
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^

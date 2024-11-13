@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
+/*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 16:32:05 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/02 22:37:24 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/13 04:42:53 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	const char *p = s;
+	while (p)
+		p++;
+	return (p - s);
 }
