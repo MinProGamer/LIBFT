@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 20:57:15 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/14 00:16:00 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/14 06:07:28 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int	ft_atoi(const char *str)
 	set(&result, &sign);
 	while (*str == 32 || (*str >= 9 && *str <= 13))
 		str++;
-	if (*str == '-' || *str == '+'){
+	if (*str == '-' || *str == '+')
+	{
 		if (*str == '-')
 			sign = -1;
 		str++;
@@ -45,13 +46,4 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	return (sign * result);
-}
-#include <stdio.h>
-#include <string.h>
-int main ()
-{
-	char str[] = "-99999999999999999999999999";
-	printf ("%d\n", ft_atoi(str));
-	printf ("%d\n", atoi(str));
-
 }

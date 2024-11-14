@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 20:18:08 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/12 23:04:38 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/14 06:13:01 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,6 @@ void				ft_putnbr_fd(int n, int fd);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_itoa(int n);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
+char				**ft_split(char const *s, char c);
 
 #endif

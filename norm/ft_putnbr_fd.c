@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
+/*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 08:30:16 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/10 13:22:41 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/14 06:04:31 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	ft_putnbr_fd(int n, int fd)
 	char	c;
 
 	if (fd < 0)
+	{
+		write(2, "-1", 2);
 		return ;
+	}
 	if (n == -2147483648)
 	{
 		ft_putstr_fd("-2147483648", fd);

@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 16:32:05 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/13 04:42:53 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/14 06:04:48 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	const char *p = s;
-	while (p)
+	const char	*p;
+
+	p = s;
+	while (*p)
 		p++;
 	return (p - s);
 }

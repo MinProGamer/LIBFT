@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 20:08:16 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/13 04:06:39 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/14 06:05:05 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	s = (unsigned char *)src;
 	if (dst == NULL && src == NULL)
 		return (NULL);
-	while ( dst != src && n--)
+	while (dst != src && n--)
 		*d++ = *s++;
 	return (dst);
 }

@@ -6,7 +6,7 @@
 #    By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/13 05:03:47 by zajaddou          #+#    #+#              #
-#    Updated: 2024/11/13 05:03:58 by zajaddou         ###   ########.fr        #
+#    Updated: 2024/11/14 06:13:15 by zajaddou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,8 @@ SRCS = ft_isalpha.c \
        ft_putnbr_fd.c \
        ft_strmapi.c \
        ft_itoa.c \
-       ft_striteri.c
+       ft_striteri.c \
+       ft_split.c
 
 OBJS = $(SRCS:.c=.o)
 
