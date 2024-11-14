@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zajaddou <zakariaajaddou@gmail.com>        +#+  +:+       +#+        */
+/*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 03:51:16 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/01 22:08:57 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/14 00:41:52 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	dst[d_len + i] = '\0';
 	return (d_len + s_len);
+}
+int	main(void)
+{
+	
 }
