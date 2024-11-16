@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 20:57:15 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/14 06:07:28 by zajaddou         ###   ########.fr       */
+/*   Updated: 2024/11/16 16:22:43 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,10 @@ int	ft_atoi(const char *str)
 	{
 		before = result;
 		result = (result * 10) + (*str - '0');
-		if ((result / 10) != before)
-		{
-			if (sign == -1)
-				return (0);
+		if ((result / 10) != before && (sign == -1))
+			return (0);
+		else if ((result / 10) != before)
 			return (-1);
-		}
 		str++;
 	}
 	return (sign * result);

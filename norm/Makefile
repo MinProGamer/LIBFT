@@ -6,7 +6,7 @@
 #    By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/13 05:03:47 by zajaddou          #+#    #+#              #
-#    Updated: 2024/11/14 06:13:15 by zajaddou         ###   ########.fr        #
+#    Updated: 2024/11/16 16:12:45 by zajaddou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar
-ARFLAGS = rcs
+ARFLAGS = rc
 
 SRCS = ft_isalpha.c \
        ft_isdigit.c \
