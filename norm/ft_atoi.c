@@ -12,22 +12,17 @@
 
 #include "libft.h"
 
-static void	set(long *result, int *sign)
-{
-	*result = 0;
-	*sign = 1;
-}
-
 int	ft_atoi(const char *str)
 {
-	long	result;
-	int		sign;
-	long	before;
+	int			sign;
+	long int	rs;
+	long int	rs2;
 
-	set(&result, &sign);
-	while (*str == 32 || (*str >= 9 && *str <= 13))
+	sign = 1;
+	rs = 0;
+	while (*str != '\0' && ((*str >= 9 && *str <= 13) || (*str == 32)))
 		str++;
-	if (*str == '-' || *str == '+')
+	if (*str == '+' || *str == '-')
 	{
 		if (*str == '-')
 			sign = -1;
@@ -35,13 +30,13 @@ int	ft_atoi(const char *str)
 	}
 	while (*str >= '0' && *str <= '9')
 	{
-		before = result;
-		result = (result * 10) + (*str - '0');
-		if ((result / 10) != before && (sign == -1))
-			return (0);
-		else if ((result / 10) != before)
+		rs2 = rs;
+		rs = rs * 10 + (*str - '0');
+		if (rs / 10 != rs2 && sign == 1)
 			return (-1);
+		if (rs / 10 != rs2 && sign == -1)
+			return (0);
 		str++;
 	}
-	return (sign * result);
+	return ((rs * sign));
 }
