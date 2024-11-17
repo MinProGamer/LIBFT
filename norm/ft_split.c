@@ -12,6 +12,21 @@
 
 #include "libft.h"
 
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/14 06:13:31 by zajaddou          #+#    #+#             */
+/*   Updated: 2024/11/16 17:37:07 by zajaddou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+#include <stdlib.h>
+
 int	ft_count_words(const char *s, char c)
 {
 	int	i;
@@ -101,4 +116,18 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	s1 = ft_split_string(s, c, s1, c_words);
 	return (s1);
+}
+
+int main()
+{
+	char str[] = "hamza dazia , adamn , zakiar d, oda,dn oj";
+	char c  = ',';
+	char **s = ft_split(str,c);
+    int i = 0;
+	while(s[i])
+	{
+		printf("%s \n",s[i]);
+		i++;
+	}
+	return 0;
 }
