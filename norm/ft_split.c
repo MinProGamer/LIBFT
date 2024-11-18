@@ -5,129 +5,95 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 06:13:31 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/16 17:37:07 by zajaddou         ###   ########.fr       */
+/*   Created: 2024/11/18 07:42:03 by zajaddou          #+#    #+#             */
+/*   Updated: 2024/11/18 07:50:18 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 06:13:31 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/16 17:37:07 by zajaddou         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+static char	**free_array(char **dest, int i)
+{
+	while (i > 0)
+	{
+		i--;
+		free(dest[i]);
+	}
+	free(dest);
+	return (0);
+}
 
-#include <stdio.h>
-#include <stdlib.h>
-
-int	ft_count_words(const char *s, char c)
+static void	ft_set(char *dest, const char *str, int start, int len)
 {
 	int	i;
-	int	count;
 
 	i = 0;
-	count = 0;
+	while (i < len)
+	{
+		dest[i] = str[start + i];
+		i++;
+	}
+	dest[len] = '\0';
+}
+
+static char	**split_set(char const *str, char c, char **dest, int c_words)
+{
+	int	si;
+	int	wi;
+	int	wl;
+
+	si = 0;
+	wi = 0;
+	wl = 0;
+	while (wi < c_words)
+	{
+		while (str[si] == c)
+			si++;
+		while (str[si] != c && str[si] != '\0')
+		{
+			si++;
+			wl++;
+		}
+		dest[wi] = (char *)malloc((wl + 1) * sizeof(char));
+		if (!dest[wi])
+			return (free_array(dest, wi));
+		ft_set(dest[wi], str, (si - wl), wl);
+		wl = 0;
+		wi++;
+	}
+	dest[wi] = NULL;
+	return (dest);
+}
+
+static size_t	count_word(char const *s, char c)
+{
+	size_t	c_words;
+	size_t	i;
+
+	i = 0;
+	c_words = 0;
 	while (s[i])
 	{
 		if (s[i] != c)
 		{
-			count++;
+			c_words++;
 			while (s[i] && s[i] != c)
 				i++;
 		}
 		else
 			i++;
 	}
-	return (count);
-}
-
-static char	**free_array(char **ptr, int i)
-{
-	while (i > 0)
-	{
-		i--;
-		free(ptr[i]);
-	}
-	free(ptr);
-	return (0);
-}
-
-static char	*ft_print_strings(char *str, const char *s, int j, int word_len)
-{
-	int	i;
-
-	i = 0;
-	while (word_len > 0)
-	{
-		str[i] = s[j - word_len];
-		i++;
-		word_len--;
-	}
-	str[i] = '\0';
-	return (str);
-}
-
-static char	**ft_split_string(char const *s, char c, char **s1, int c_words)
-{
-	int	j;
-	int	word;
-	int	word_len;
-
-	j = 0;
-	word = 0;
-	word_len = 0;
-	while (word < c_words)
-	{
-		while (s[j] && s[j] == c)
-			j++;
-		while (s[j] && s[j] != c)
-		{
-			j++;
-			word_len++;
-		}
-		s1[word] = (char *)malloc((word_len + 1) * sizeof(char));
-		if (!s1[word])
-			return (free_array(s1, word));
-		ft_print_strings(s1[word], s, j, word_len);
-		word_len = 0;
-		word++;
-	}
-	s1[word] = NULL;
-	return (s1);
+	return (c_words);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char			**s1;
-	unsigned int	c_words;
+	char	**dest;
+	size_t	c_words;
 
-	if (!s)
+	c_words = count_word(s, c);
+	dest = (char **)malloc((c_words + 1) * sizeof(char *));
+	if (!dest)
 		return (NULL);
-	c_words = ft_count_words(s, c);
-	s1 = (char **)malloc((c_words + 1) * sizeof(char *));
-	if (!s1)
-		return (NULL);
-	s1 = ft_split_string(s, c, s1, c_words);
-	return (s1);
-}
-
-int main()
-{
-	char str[] = "hamza dazia , adamn , zakiar d, oda,dn oj";
-	char c  = ',';
-	char **s = ft_split(str,c);
-    int i = 0;
-	while(s[i])
-	{
-		printf("%s \n",s[i]);
-		i++;
-	}
-	return 0;
+	return (split_set(s, c, dest, c_words));
 }
