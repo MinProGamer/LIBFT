@@ -6,15 +6,13 @@
 #    By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/13 05:03:47 by zajaddou          #+#    #+#              #
-#    Updated: 2024/11/19 04:35:10 by zajaddou         ###   ########.fr        #
+#    Updated: 2024/11/19 04:57:50 by zajaddou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS = -Wall -Wextra -Werror
-
-CC = cc
-
 NAME = libft.a
+CFLAGS = -Wall -Wextra -Werror
+CC = cc
 
 SRCS = ft_isalpha.c \
 	ft_isdigit.c \
